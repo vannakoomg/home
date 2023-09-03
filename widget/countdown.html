@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2262501229777689"
+    crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <div class="container-fluid align-items-center">
+    <h3 class="text-center title_card ">Countdown</h3>
+    <h3>
+      Step 1 : Create flutter project
+    </h3>
+    <pre class="block-small"><code>
+flutter create Countdown
+            </code></pre>
+    <h3>
+      Step 2 : In the main.dart
+    </h3>
+    <pre class="block-small "><code>
+<div id="main"></div>
+</code></pre>
+    <h3>Step 3 : Create CountdownScreen</h3>
+    <pre><code><div class="block-code">
+<div class="d-flex justify-content-end"><button id="myInput" onclick="myFunction()" class="btn btn-outline-primary btn-sm ">Copy</button></div>
+<div id="screen"></div>
+            </div></code></pre>
+    <h1>Relate</h1>
+    <div class="d-flex flex-wrap mb-5" id="demo">
+    </div>
+  </div>
+</body>
+<script>
+  var main = `import 'package:flutter/material.dart';
+  void main() {
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: FetchApiHttp()
+  ));
+}`;
+  var gamescreen = `
+class Countdown extends StatefulWidget {
+  const Countdown({super.key});
+
+  @override
+  State<Countdown> createState() => _CountdownState();
+}
+
+class _CountdownState extends State<Countdown> {
+  int number = 30;
+  Timer? timer;
+  @override
+  void initState() {
+    timer = Timer.periodic(const Duration(milliseconds: 1000), (Timer timer) {
+      setState(() {
+        if (number <= 0) {
+          setState(() {
+            number = 30;
+          });
+        } else {
+          number--;
+        }
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "count down",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: const Color(0xff15616d),
+      ),
+      body: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: Container(
+                  height: 150,
+                  width: 150,
+                  decoration: BoxDecoration(
+                      border:
+                          Border.all(color: const Color(0xff4f772d), width: 3),
+                      shape: BoxShape.circle),
+                  child: Center(
+                    child: Text(
+                      "$number ",
+                      style: const TextStyle(
+                          color: Color(0xffe36414),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 35),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 500),
+                    width: MediaQuery.of(context).size.width * (number) / 30,
+                    height: 40,
+                    color: Colors.red.withOpacity((number) / 30),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      number = 30;
+                    });
+                  },
+                  child: const Text("Reset")),
+              ElevatedButton(
+                  onPressed: () {
+                    if (timer!.isActive) {
+                      setState(() {
+                        timer!.cancel();
+                      });
+                    } else {
+                      timer = Timer.periodic(const Duration(milliseconds: 1000),
+                          (Timer timer) {
+                        setState(() {
+                          if (number <= 0) {
+                            setState(() {
+                              number = 30;
+                            });
+                          } else {
+                            number--;
+                          }
+                        });
+                      });
+                    }
+                  },
+                  child: timer!.isActive
+                      ? const Text("Pause")
+                      : const Text("Resume"))
+            ],
+          )),
+    );
+  }
+}
+`;
+  const relate = {
+    "data": [
+      {
+        "title": "Navigetor Page1 to Page2 with Omg style",
+        "image": "image/widget/hero.png",
+        "route": "widget/hero.html",
+      },
+      {
+        "title": "Zoom Image with dynamic control",
+        "image": "image/widget/zoom_image.png",
+        "route": "widget/zoom_image.html",
+      },
+      {
+        "title": "draw what you want with any color",
+        "image": "image/widget/drawing.png",
+        "route": "widget/drawing.html",
+      },
+      {
+        "title": "Pick any Image video from gallary or Take a photo",
+        "image": "image/widget/pickimage.png",
+        "route": "widget/pickimage.html",
+      },
+    ]
+  };
+  let text = "";
+  relate.data.forEach(function (value, key) {
+    text += `<div class="card_relat" style="width: 18rem;">
+            <a href="${value.route}">
+                <img src="${value.image}" style=" object-fit: cover;" class="card-img-top"> </a>
+                <div class="card_body">
+                    <p class="">
+                        ${value.title}
+                    </p>
+                </div>
+            </div>`
+  })
+  document.getElementById("main").innerHTML = main;
+  document.getElementById("demo").innerHTML = text;
+  document.getElementById("screen").innerHTML = gamescreen;
+  function myFunction() {
+    navigator.clipboard.writeText(gamescreen);
+    document.getElementById("myInput").innerText = "copyed";
+  }
+</script>
+
+</html>

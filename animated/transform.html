@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2262501229777689"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid align-items-center">
+        <h3 class="text-center title_card ">Transform</h3>
+        <h3>
+            Step 1 : Create flutter project
+        </h3>
+        <pre class="block-small"><code>
+flutter create TransformExample
+            </code></pre>
+        <h3>
+            Step 2 : In the main.dart
+        </h3>
+        <pre class="block-small ">
+            <code>
+import 'dart:math';
+import 'package:flutter/material.dart';
+void main() {
+runApp(
+const MaterialApp(
+home: const TransformExample()
+),
+);
+}
+</code></pre>
+        <h3>Step 3 : Create AnimatedTransformExample</h3>
+        <pre><code class="language-dart hljs " data-highlighted="yes"><div class="block-code">
+<div class="d-flex justify-content-end"><button value="" id="myInput" onclick="myFunction()" class="btn btn-outline-primary btn-sm ">Copy</button> </div>
+<div id="screen"></div>
+            </div></code></pre>
+        <h1>Result</h1>
+        <a href="../image/result_animation_container.mp4"></a>
+        <h1>Relate</h1>
+        <div class="d-flex flex-wrap mb-5" id="demo">
+        </div>
+    </div>
+</body>
+<script>
+    var code = `class AnimatedTransformExample extends StatefulWidget {
+const AnimatedTransformExample({super.key, required this.title});
+final String title;
+@override
+State<AnimatedTransformExample> createState() => _AnimatedTransformExampleState();
+    }
+    class _AnimatedTransformExampleState extends State<AnimatedTransformExample> {
+        double x = 0.0;
+        double y = 0.0;
+        double z = 0.0;
+        @override
+        Widget build(BuildContext context) {
+        return Scaffold(
+        appBar: AppBar(
+        title: Text(widget.title),
+        ),
+        body: Column(
+        children: [
+        const SizedBox(height: 50,),
+        GestureDetector(
+        onPanUpdate: (details) {
+        setState(() {
+        x += details.delta.dx * 0.01;
+        y += details.delta.dy * 0.01;
+        setState(() {
+        x %= pi * 2;
+        y %= pi * 2;
+        });
+        });
+        },
+        child: Stack(
+        children: [
+        Transform(
+        transform: Matrix4.identity()
+        ..rotateX(y)
+        ..rotateY(x)
+        ..rotateZ(z),
+        alignment: Alignment.center,
+        child: Column(
+        children: [
+        Center(
+        child: Container(
+        height: 200,
+        width: 300,
+        decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(20),
+        image: const DecorationImage(
+        image: NetworkImage(
+        "https://imgcdn.zigwheels.co.th/large/gallery/color/91/3255/kawasaki-w175-color-965747.png",
+        ),
+        fit: BoxFit.cover),
+        ),
+        ),
+        ),
+        ],
+        ),
+        ),
+        ],
+        ),
+        ),
+        const SizedBox(
+        height: 90,
+        ),
+        const Text("X"),
+        Slider(
+        value: x,
+        min: pi * -2,
+        max: pi * 2,
+        onChanged: (value) {
+        setState(() {
+        x = value;
+        });
+        }),
+        const Text("Y"),
+        Slider(
+        value: y,
+        min: pi * -2,
+        max: pi * 2,
+        onChanged: (value) {
+        setState(() {
+        y = value;
+        });
+        }),
+        const Text("Z"),
+        Slider(
+        value: z,
+        min: pi * -2,
+        max: pi * 2,
+        onChanged: (value) {
+        setState(() {
+        z = value;
+        });
+        }),
+        ElevatedButton(
+        onPressed: () {
+        setState(() {
+        x = 0;
+        y = 0;
+        z = 0;
+        });
+        },
+        child: const Text("Reset"))
+        ],
+        ),
+        );
+        }
+        }`;
+    const relate = {
+        "data": [
+            {
+                "title": "textfiled animation like your drunk",
+                "image": "../image/animated/drunk_textfile.png",
+                "route": "../animated/drunk_textField.html",
+            },
+            {
+                "title": "animetion like in the pinterst app",
+                "image": "../image/animated/pinterest.png",
+                "route": "../animated/pinterest.html",
+            },
+
+            {
+                "title": "Cube is like a 3D widget and you can PanUpdate on (X , Y , Z)",
+                "image": "../image/animated/cube.png",
+                "route": "../animated/cube.html",
+            },
+            {
+                "title": "AnimatedIcon automatically animate between the old icon new values ",
+                "image": "../image/animated/icon.png",
+                "route": "../animated/icon.html",
+            },
+            {
+                "title": "like the ez touch on ios ",
+                "image": "../image/animated/ez_touch.png",
+                "route": "../animated/ez_touch.html",
+            },
+            {
+                "title": "AnimatedRotaion automatically animate between the old turns new turns ",
+                "image": "../image/animated/rotation.png",
+                "route": "../animated/rotation.html",
+            },
+            {
+                "title": "animation between the old position to new position   ",
+                "image": "../image/animated/position.png",
+                "route": "../animated/position.html",
+            },
+            {
+                "title": "AnimatedContainer automatically animate between the old and new values of container (size,color,duration,...)",
+                "image": "../image/animated/container.png",
+                "route": "../animated/container.html",
+            },
+            {
+                "title": "Animated widget like a water Waves",
+                "image": "../image/animated/water.png",
+                "route": "../animated/water.html",
+            },
+        ]
+    };
+    let text = "";
+    relate.data.forEach(function (value, key) {
+        text += `<div class="card_relat" style="width: 18rem;">
+            <a href="${value.route}">
+                <img src="${value.image}" style=" object-fit: cover;" class="card-img-top"> </a>
+                <div class="card_body">
+                    <p class="">
+                        ${value.title}
+                    </p>
+                </div>
+            </div>`
+    })
+    document.getElementById("demo").innerHTML = text;
+    document.getElementById('screen').innerHTML = code;
+    function myFunction() {
+        navigator.clipboard.writeText(code);
+        document.getElementById("myInput").innerText = "copyed";
+    }
+</script>
+
+</html>

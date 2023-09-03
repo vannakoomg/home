@@ -1,0 +1,88 @@
+ * {
+     margin: 0;
+     padding: 0;
+
+ }
+
+ .card_relat {
+     width: 50%;
+     background-color: #00B2FF;
+     border-radius: 20;
+     margin: 5px 5px 5px 5px;
+     box-shadow: 0 4px 8px 0 rgba(78, 78, 78, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ h3 {
+     padding: 10px 0px;
+     font-family: Arial, Helvetica, sans-serif;
+     color: #2d9d67;
+ }
+
+ .card_body {
+     background-color: #00B2FF;
+     width: 100%;
+     padding: 10px 10px;
+ }
+
+ .title_card {
+     font-family: Verdana, sans-serif;
+     font-weight: 540;
+     margin-top: 20px;
+     background-color: #00B2FF;
+     padding: 50px 10px;
+     color: #ffffff;
+ }
+
+ h6 {
+     color: rgb(87, 87, 87);
+ }
+
+ .block-code {
+     color: #eae8e8;
+     background-color: rgb(9, 48, 67);
+     padding: 0px 20px;
+     font-size: larger;
+     border-radius: 20px;
+     overflow-y: auto;
+     height: 500px;
+     position: relative;
+ }
+
+ .block-small {
+     color: #eae8e8;
+     background-color: rgb(9, 48, 67);
+     padding: 0px 20px;
+     font-size: larger;
+     border-radius: 20px;
+ }
+
+ .botton-copy {
+     position: absolute;
+     top: 5%;
+     left: 97%;
+     transform: translate(-50%, -50%);
+ }
+
+ p {
+     color: rgb(65, 63, 63);
+
+ }
+
+ .bar {
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     color: white;
+     font-size: larger;
+ }
+
+ .bar-seleted {
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     color: #00B2FF;
+     font-size: larger;
+     user-select: none;
+ }
+
+ .logo {
+     height: 70%;
+     width: 90%;
+
+ }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2262501229777689"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="image/logo.png" type="image/x-icon">
+    <title>code</title>
+</head>
+
+<body>
+    <ul class="nav justify-content-center p-2 bg-black">
+
+        <li class="navbar-nav">
+            <a class="bar-seleted" href="animated.html">
+                Animation
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link bar" href="game.html">Game</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link bar" href="api.html">Api</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link bar" href="widgets.html">Widget</a>
+        </li>
+
+    </ul>
+    <h4 class="m-2 ">we have many animation build with the best code eazy for you to customize</h4>
+    <div class="d-flex flex-wrap mb-5 p-2" id="name">
+    </div>
+</body>
+<script>
+    const relate = {
+        "data": [
+            {
+                "title": "textfiled animation like your drunk",
+                "image": "image/animated/drunk_textfile.png",
+                "route": "animated/drunk_textField.html",
+            },
+            {
+                "title": "animetion like in the pinterst app",
+                "image": "image/animated/pinterest.png",
+                "route": "animated/pinterest.html",
+            },
+
+            {
+                "title": "Cube is like a 3D widget and you can PanUpdate on (X , Y , Z)",
+                "image": "image/animated/cube.png",
+                "route": "animated/cube.html",
+            },
+            {
+                "title": "AnimatedIcon automatically animate between the old icon new values ",
+                "image": "image/animated/icon.png",
+                "route": "animated/icon.html",
+            },
+            {
+                "title": "like the ez touch on ios ",
+                "image": "image/animated/ez_touch.png",
+                "route": "animated/ez_touch.html",
+            },
+            {
+                "title": "AnimatedRotaion automatically animate between the old turns new turns ",
+                "image": "image/animated/rotation.png",
+                "route": "animated/rotation.html",
+            },
+            {
+                "title": "Transform for change tranform by PanUpdate on (X , Y , Z)  ",
+                "image": "image/animated/transfrom.png",
+                "route": "animated/transform.html",
+            },
+            {
+                "title": "animation between the old position to new position   ",
+                "image": "image/animated/position.png",
+                "route": "animated/position.html",
+            },
+            {
+                "title": "AnimatedContainer automatically animate between the old and new values of container (size,color,duration,...)",
+                "image": "image/animated/container.png",
+                "route": "animated/container.html",
+            },
+            {
+                "title": "Animated widget like a water Waves",
+                "image": "image/animated/water.png",
+                "route": "animated/water.html",
+            },
+        ]
+    };
+    var text = '';
+    relate.data.forEach(function (value, key) {
+        text += `<div class="card_relat" style="width: 18rem;">
+            <a href="${value.route}">
+                <img src="${value.image}" style=" object-fit: cover;" class="card-img-top" > </a>
+                <div class="card_body">
+                    <p class="">
+                        ${value.title}
+                    </p>
+                </div>
+            </div>`
+    })
+    document.getElementById('name').innerHTML = text;
+</script>
+
+</html>

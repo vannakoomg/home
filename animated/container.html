@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2262501229777689"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid align-items-center">
+        <h3 class="text-center title_card ">Animated Container</h3>
+        <h3>
+            Step 1 : Create flutter project
+        </h3>
+        <pre class="block-small"><code>
+flutter create AnimatedContainerExample
+            </code></pre>
+        <h3>
+            Step 2 : In the main.dart
+        </h3>
+        <pre class="block-small ">
+            <code>
+import 'package:flutter/material.dart';
+void main() {
+runApp(const MaterialApp(
+debugShowCheckedModeBanner: false,
+home: FetchApiHttp()
+));
+}</code></pre>
+        <h3>Step 3 : Create 3DCubeScreen</h3>
+        <pre><code class="language-dart hljs " data-highlighted="yes"><div class="block-code">
+<div class="d-flex justify-content-end"><button value="" id="myInput" onclick="myFunction()" class="btn btn-outline-primary btn-sm ">Copy</button> </div>
+<div id="gamecode"></div>
+            </div></code></pre>
+        <h1>Result</h1>
+        <a href="../image/result_animation_container.mp4"></a>
+        <h1>Relate</h1>
+        <div class="d-flex flex-wrap mb-5" id="demo">
+        </div>
+    </div>
+</body>
+<script>
+    var code = `class AnimatedContainerExample extends StatefulWidget {
+const AnimatedContainerExample({super.key});
+@override
+State<AnimatedContainerExample> createState() =>
+    _AnimatedContainerExampleState();
+    }
+    class _AnimatedContainerExampleState extends State<AnimatedContainerExample>
+        with SingleTickerProviderStateMixin {
+        bool i = false;
+        bool j = false;
+        bool k = false;
+        bool m = false;
+        @override
+        Widget build(BuildContext context) {
+        return Scaffold(
+        appBar: AppBar(
+        title: const Text("Animated Container "),
+        ),
+        body: GestureDetector(
+        onTap: () {
+        setState(() {
+        m = !m;
+        });
+        },
+        child: AnimatedContainer(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        color: m ? const Color(0xffff595e) : Colors.white,
+        duration: const Duration(milliseconds: 400),
+        child: Center(
+        child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+        GestureDetector(
+        onTap: () {
+        setState(() {
+        i = !i;
+        });
+        },
+        child: AnimatedContainer(
+        curve: Curves.ease,
+        duration: const Duration(milliseconds: 500),
+        height: 60,
+        width: i ? 150 : 50,
+        color: m ? Colors.white : const Color(0xffff7d00),
+        ),
+        ),
+        SizedBox(
+        height: 150,
+        width: 150,
+        child: Center(
+        child: GestureDetector(
+        onTap: () {
+        setState(() {
+        j = !j;
+        });
+        },
+        child: AnimatedContainer(
+        duration: const Duration(milliseconds: 500),
+        height: j ? 150 : 50,
+        width: j ? 150 : 50,
+        color: m ? Colors.white : Colors.green,
+        ),
+        ),
+        ),
+        ),
+        GestureDetector(
+        onTap: () {
+        setState(() {
+        k = !k;
+        });
+        },
+        child: AnimatedContainer(
+        duration: const Duration(milliseconds: 1000),
+        decoration: BoxDecoration(
+        color: m ? Colors.white : Colors.red,
+        borderRadius: k
+        ? BorderRadius.circular(100)
+        : BorderRadius.circular(0)),
+        height: 150,
+        width: 150,
+        ),
+        )
+        ],
+        ),
+        ),
+        ),
+        ));
+        }
+        }`;
+
+    const relate = {
+
+        "data": [
+            {
+                "title": "textfiled animation like your drunk",
+                "image": "../image/animated/drunk_textfile.png",
+                "route": "../animated/drunk_textField.html",
+            },
+            {
+                "title": "animetion like in the pinterst app",
+                "image": "../image/animated/pinterest.png",
+                "route": "../animated/pinterest.html",
+            },
+            {
+                "title": "Cube is like a 3D widget and you can PanUpdate on (X , Y , Z)",
+                "image": "../image/animated/cube.png",
+                "route": "../animated/cube.html",
+            },
+            {
+                "title": "AnimatedIcon automatically animate between the old icon new values ",
+                "image": "../image/animated/icon.png",
+                "route": "../animated/icon.html",
+            },
+            {
+                "title": "like the ez touch on ios ",
+                "image": "../image/animated/ez_touch.png",
+                "route": "../animated/ez_touch.html",
+            },
+            {
+                "title": "AnimatedRotaion automatically animate between the old turns new turns ",
+                "image": "../image/animated/rotation.png",
+                "route": "../animated/rotation.html",
+            },
+            {
+                "title": "Transform for change tranform by PanUpdate on (X , Y , Z)  ",
+                "image": "../image/animated/transfrom.png",
+                "route": "../animated/transform.html",
+            },
+            {
+                "title": "animation between the old position to new position   ",
+                "image": "../image/animated/position.png",
+                "route": "../animated/position.html",
+            },
+            {
+                "title": "Animated widget like a water Waves",
+                "image": "../image/animated/water.png",
+                "route": "../animated/water.html",
+            },
+        ]
+    };
+    let text = "";
+    relate.data.forEach(function (value, key) {
+        text += `<div class="card_relat" style="width: 18rem;">
+            <a href="${value.route}">
+                <img src="${value.image}" style=" object-fit: cover;" class="card-img-top" > </a>
+                <div class="card_body">
+                    <p class="">
+                        ${value.title}
+                    </p>
+                </div>
+            </div>`
+    })
+    document.getElementById("demo").innerHTML = text;
+    document.getElementById("gamecode").innerHTML = code;
+    function myFunction() {
+        var copy = document.getElementById("myInput");
+        navigator.clipboard.writeText(code);
+        document.getElementById("myInput").innerText = "copyed";
+    }
+</script>
+
+</html>
