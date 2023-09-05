@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2262501229777689"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>code</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid align-items-center">
+        <h3 class="text-center title_card ">Getx State Management</h3>
+        <h3>
+            Step 1 : Create flutter project
+        </h3>
+        <pre class="block-small"><code>
+flutter create Getxstatemanagement
+            </code></pre>
+        <h3>
+            Step 1 :add getx package
+        </h3>
+        <pre class="block-small"><code>
+flutter pub add get
+                </code></pre>
+        <h3>
+            Step 2 : In the main.dart
+        </h3>
+        <pre class="block-small ">
+            <code>
+import 'dart:math';
+import 'package:flutter/material.dart';
+void main() {
+runApp(
+const MaterialApp(
+home: const GetXScreen()
+),
+);
+}
+</code></pre>
+        <h3>Step 3 : Create Controller</h3>
+        <pre><code class="language-dart hljs " data-highlighted="yes"><div class="block-small">
+<div class="d-flex justify-content-end"><button value="" id="idController" onclick="copyController()" class="btn btn-outline-primary btn-sm ">Copy</button> </div>
+<div id="controller"></div>
+            </div></code></pre>
+        <h3>Step 4 : Create getxstatemanagement.dart</h3>
+        <pre><code class="language-dart hljs " data-highlighted="yes"><div class="block-code">
+    <div class="d-flex justify-content-end"><button value="" id="idScreen" onclick="copyMatchingScreen()" class="btn btn-outline-primary btn-sm ">Copy</button> </div>
+    <div id="gamescreen"></div>
+                </div></code></pre>
+
+
+        <h1>Result</h1>
+        <a href="../image/result_animation_container.mp4"></a>
+        <h1>Relate</h1>
+        <div class="d-flex flex-wrap mb-5" id="demo">
+        </div>
+    </div>
+</body>
+<script>
+    var controller = `import 'package:get/get.dart';
+
+class GetbuilderController extends GetxController {
+  int number = 0;
+  String name = "Dara";
+  List<String> listOfenimal = ["cat ", "dog"];
+}
+`; var code = `import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_example/controller/obx_controller.dart';
+import 'package:getx_example/screens/getbuilder_screen.dart';
+
+class GetXScreen extends StatelessWidget {
+  const GetXScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = Get.put(ObxController());
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Getx with Obx"),
+        backgroundColor: Colors.blue,
+      ),
+      body: Obx(
+        () => SizedBox(
+          width: double.infinity,
+          child: Column(
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("number = $controller.number.value}"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                            onPressed: () {
+                              controller.number.value++;
+                            },
+                            child: const Text("+ number ")),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        ElevatedButton(
+                            onPressed: () {
+                              controller.number.value--;
+                            },
+                            child: const Text("- number "))
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 60,
+                    ),
+                    Text("$controller.listOfenimal}"),
+                    ElevatedButton(
+                        onPressed: () {
+                          controller.listOfenimal.add("dainoser");
+                        },
+                        child: const Text("add list"))
+                  ],
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.to(const GetbuilderScreen());
+                },
+                child: Container(
+                  height: 60,
+                  color: const Color(0xff457b9d),
+                  child: const Center(child: Text("go to getbuilder")),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+`;
+    const relate = {
+        "data": [
+            {
+                "title": "Paper Rock Scissors with AI and nice animation",
+                "image": "../image/game/rock-paper-scissors.png",
+                "route": "../game/paper_rock_scissors.html",
+            },
+            {
+                "title": "Tic Tac Toe 3x3 2Player",
+                "image": "../image/game/tic_tac_toe.png",
+                "route": "../game/tic_tac_toe.html",
+            },
+            {
+                "title": "Snakc game eat apple become big",
+                "image": "../image/game/snake.png",
+                "route": "../game/snake.html",
+            }
+        ]
+    };
+    let text = "";
+    relate.data.forEach(function (value, key) {
+        text += `<div class="card_relat" style="width: 18rem;">
+            <a href="${value.route}">
+                <img src="${value.image}" style=" object-fit: cover;" class="card-img-top"> </a>
+                <div class="card_body">
+                    <p class="">
+                        ${value.title}
+                    </p>
+                </div>
+            </div>`
+    })
+    document.getElementById("demo").innerHTML = text;
+    document.getElementById('controller').innerHTML = controller;
+    document.getElementById('gamescreen').innerHTML = code;
+    function copyController() {
+        navigator.clipboard.writeText(controller);
+        document.getElementById("idController").innerText = "copyed";
+        document.getElementById('idScreen').innerHTML = "copy"
+    }
+    function copyMatchingScreen() {
+        navigator.clipboard.writeText(code);
+        document.getElementById("idController").innerText = "copy";
+        document.getElementById('idScreen').innerHTML = "copyed"
+    }
+</script>
+
+</html>
